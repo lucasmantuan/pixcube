@@ -5,10 +5,10 @@ export const Dark = createTheme({
     palette: {
         mode: "dark",
         primary: {
-            main: teal[700],
+            main: teal[700]
         },
         background: {
-            default: grey[900],
-        },
-    },
+            default: grey[900]
+        }
+    }
 });

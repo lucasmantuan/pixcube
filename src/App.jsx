@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
-import { AppThemeProvider } from "./contexts";
+import { AppThemeProvider } from "contexts";
 
 function App() {
     return (

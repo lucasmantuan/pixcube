@@ -6,7 +6,7 @@ import {
     useMemo,
     useState
 } from "react";
-import { Dark, Light } from "../themes";
+import { Dark, Light } from "themes";
 
 const ThemeContext = createContext({});
 
@@ -35,7 +35,7 @@ export const AppThemeProvider = ({ children }) => {
                 defaultTheme,
                 toggleTheme
             }}>
-            <ThemeProvider>
+            <ThemeProvider theme={theme}>
                 <Box
                     height="100vh"
                     width="100vw"

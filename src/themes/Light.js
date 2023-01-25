@@ -5,10 +5,10 @@ export const Light = createTheme({
     palette: {
         mode: "light",
         primary: {
-            main: teal[700],
+            main: teal[700]
         },
         background: {
-            default: grey[50],
-        },
-    },
+            default: grey[50]
+        }
+    }
 });
