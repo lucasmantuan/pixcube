@@ -4,7 +4,7 @@ import {
     useCallback,
     useContext,
     useMemo,
-    useState,
+    useState
 } from "react";
 import { Dark, Light } from "../themes";
 
@@ -33,15 +33,13 @@ export const AppThemeProvider = ({ children }) => {
         <ThemeContext.Provider
             value={{
                 defaultTheme,
-                toggleTheme,
-            }}
-        >
+                toggleTheme
+            }}>
             <ThemeProvider>
                 <Box
                     height="100vh"
                     width="100vw"
-                    bgcolor={theme.palette.background.default}
-                >
+                    bgcolor={theme.palette.background.default}>
                     {children}
                 </Box>
             </ThemeProvider>
