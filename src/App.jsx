@@ -1,7 +1,12 @@
 import { BrowserRouter } from "react-router-dom";
+import { AppThemeProvider } from "./contexts";
 
 function App() {
-    return <BrowserRouter>Teste</BrowserRouter>;
+    return (
+        <AppThemeProvider>
+            <BrowserRouter>Teste</BrowserRouter>
+        </AppThemeProvider>
+    );
 }
 
 export default App;
