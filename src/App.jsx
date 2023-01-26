@@ -1,12 +1,12 @@
 import { BrowserRouter } from "react-router-dom";
 import { AppThemeProvider } from "contexts";
+import { CssBaseline } from "@mui/material";
 
-function App() {
+export const App = () => {
     return (
         <AppThemeProvider>
+            <CssBaseline />
             <BrowserRouter>Teste</BrowserRouter>
         </AppThemeProvider>
     );
-}
-
-export default App;
+};
