@@ -10,5 +10,13 @@ export const Dark = createTheme({
         background: {
             default: grey[900]
         }
+    },
+    typography: {
+        body3: {
+            fontWeight: 300,
+            fontSize: "0.875rem",
+            lineHeight: 1.43,
+            letterSpacing: "0.01071em"
+        }
     }
 });
