@@ -1,18 +1,17 @@
-import { DarkModeOutlined as DarkIcon, HelpOutlineOutlined as HelpIcon, LightModeOutlined as LightIcon, MenuOutlined as MenuIcon, LoginOutlined as LoginIcon } from "@mui/icons-material";
+import { DarkModeOutlined as DarkIcon, HelpOutlineOutlined as HelpIcon, LightModeOutlined as LightIcon, LoginOutlined as LoginIcon, MenuOutlined as MenuIcon } from "@mui/icons-material";
 import { AppBar, Box, Divider, Drawer, IconButton, List, Paper, Toolbar, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { Item } from "components";
 import { useMenuContext, useThemeContext } from "contexts";
 import Logo from "images/logo.svg";
-import { Fragment } from "react";
 
 export const Menu = ({ children }) => {
     const theme = useTheme();
     const mdDown = useMediaQuery(theme.breakpoints.down("md"));
-    const { openMenu, handleOpenMenu, optionsMenu } = useMenuContext();
+    const { openMenu, handleOpenMenu, optionsMenu, titleBar } = useMenuContext();
     const { toggleTheme } = useThemeContext();
 
     return (
-        <Fragment>
+        <>
             <AppBar
                 elevation={ 0 }
                 position="fixed"
@@ -32,9 +31,9 @@ export const Menu = ({ children }) => {
                         </IconButton>
                     ) }
                     <Typography
-                        variant="body3"
+                        variant="body1"
                         sx={ { flexGrow: 1 } }>
-                        Bem Vindo a Pixcube
+                        { titleBar }
                     </Typography>
                     <IconButton
                         color="inherit">
@@ -87,14 +86,9 @@ export const Menu = ({ children }) => {
                 </Box>
             </Drawer>
             <Box
-                height="100vh"
-                marginLeft={ mdDown ? 0 : theme.spacing(26) }
-                paddingTop={ theme.spacing(4) }
-                paddingBottom={ theme.spacing(2) }
-                paddingRight={ theme.spacing(2) }
-                paddingLeft={ theme.spacing(2) } >
+                marginLeft={ mdDown ? 0 : theme.spacing(26) } >
                 { children }
             </Box>
-        </Fragment>
+        </>
     );
 };

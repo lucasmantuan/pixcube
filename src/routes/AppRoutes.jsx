@@ -1,5 +1,6 @@
-import { HomeOutlined as HomeIcon, SmartDisplayOutlined as SmartDisplayIcon, SettingsOutlined as SettingsIcon, SubscriptionsOutlined as SubscriptionsIcon } from "@mui/icons-material";
+import { HomeOutlined as HomeIcon, SettingsOutlined as SettingsIcon, SmartDisplayOutlined as SmartDisplayIcon, SubscriptionsOutlined as SubscriptionsIcon } from "@mui/icons-material";
 import { useMenuContext } from "contexts";
+import { PlayList } from "pages";
 import { useEffect } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 
@@ -39,20 +40,20 @@ export const AppRoutes = () => {
         <Routes>
             <Route
                 path="/home"
-                element={<h1>Home</h1>} />
+                element={ <h1>Home</h1> } />
             <Route
                 path="/criador"
-                element={<h1>Criador</h1>} />
+                element={ <h1>Criador</h1> } />
             <Route
                 path="/grade"
-                element={<h1>Grade</h1>} />
+                element={ <PlayList /> } />
             <Route
                 path="/configuracoes"
-                element={<h1>Configurações</h1>} />
+                element={ <h1>Configurações</h1> } />
             <Route
                 path="*"
-                element={<Navigate
-                    to="/home" />} />
+                element={ <Navigate
+                    to="/home" /> } />
         </Routes>
     );
 };
