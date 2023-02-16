@@ -1,8 +1,8 @@
-import { HomeOutlined as HomeIcon, SettingsOutlined as SettingsIcon, SmartDisplayOutlined as SmartDisplayIcon, SubscriptionsOutlined as SubscriptionsIcon } from "@mui/icons-material";
-import { useMenuContext } from "contexts";
-import { PlayList } from "pages";
-import { useEffect } from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { HomeOutlined as HomeIcon, SettingsOutlined as SettingsIcon, SmartDisplayOutlined as SmartDisplayIcon, SubscriptionsOutlined as SubscriptionsIcon } from '@mui/icons-material';
+import { useMenuContext } from 'contexts';
+import { PlaylistCreator } from 'pages';
+import { useEffect } from 'react';
+import { Navigate, Route, Routes } from 'react-router-dom';
 
 export const AppRoutes = () => {
     const { handleOptionsMenu } = useMenuContext();
@@ -12,26 +12,26 @@ export const AppRoutes = () => {
             {
                 id: 1,
                 icon: <HomeIcon />,
-                label: "Home",
-                path: "/home"
+                label: 'Home',
+                path: '/home'
             },
             {
                 id: 2,
                 icon: <SmartDisplayIcon />,
-                label: "Criador",
-                path: "/criador"
+                label: 'Criador',
+                path: '/criador'
             },
             {
                 id: 3,
                 icon: <SubscriptionsIcon />,
-                label: "Grade",
-                path: "/grade"
+                label: 'Grade',
+                path: '/grade'
             },
             {
                 id: 4,
                 icon: <SettingsIcon />,
-                label: "Configurações",
-                path: "/configuracoes"
+                label: 'Configurações',
+                path: '/configuracoes'
             }
         ]);
     }, []);
@@ -39,21 +39,21 @@ export const AppRoutes = () => {
     return (
         <Routes>
             <Route
-                path="/home"
-                element={ <h1>Home</h1> } />
+                path='/home'
+                element={<h1>Home</h1>} />
             <Route
-                path="/criador"
-                element={ <h1>Criador</h1> } />
+                path='/criador'
+                element={<h1>Criador</h1>} />
             <Route
-                path="/grade"
-                element={ <PlayList /> } />
+                path='/grade'
+                element={<PlaylistCreator />} />
             <Route
-                path="/configuracoes"
-                element={ <h1>Configurações</h1> } />
+                path='/configuracoes'
+                element={<h1>Configurações</h1>} />
             <Route
-                path="*"
-                element={ <Navigate
-                    to="/home" /> } />
+                path='*'
+                element={<Navigate
+                    to='/home' />} />
         </Routes>
     );
 };

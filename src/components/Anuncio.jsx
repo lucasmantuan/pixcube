@@ -1,50 +1,55 @@
-import { Card, CardContent, CardMedia, Chip, Stack, Typography, useTheme } from "@mui/material";
+import { Box, Chip, Stack, Typography, useTheme } from '@mui/material';
+import { Draggable } from 'react-beautiful-dnd';
 
-export const Anuncio = ({ image, title, id, created, type }) => {
+export function Anuncio({ anuncio, index, type }) {
     const theme = useTheme();
+
     return (
-        <Card
-            variant="outlined"
-            elevation={ 2 }
-            sx={ {
-                display: "flex",
-                margin: theme.spacing(1),
-                height: type === "card" ? theme.spacing(9) : theme.spacing(6.75),
-                width: type === "card" ? theme.spacing(16) : "100%"
-            } }>
-            <CardMedia
-                component="img"
-                image={ image }
-                sx={ {
-                    height: type === "card" ? theme.spacing(9) : theme.spacing(6.75),
-                    width: type === "card" ? theme.spacing(16) : theme.spacing(12)
-                } } />
-            { title &&
-                <CardContent
-                    sx={ {
-                        "&:last-child": { paddingBottom: 0 },
-                        alignItems: "center",
-                        display: "flex",
-                        padding: 0
-                    } }>
-                    <Chip
-                        color="primary"
-                        sx={ { marginX: theme.spacing(1) } }
-                        label={ id } />
+        <Draggable
+            draggableId={anuncio.id}
+            index={index}>
+            {(provided) => (
+                <Box
+                    bgcolor='white'
+                    borderRadius={theme.spacing(0.5)}
+                    margin={theme.spacing(0.5)}
+                    ref={provided.innerRef}
+                    display='flex'
+                    flexBasis={type == 'list' ? '100%' : null}
+                    {...provided.dragHandleProps}
+                    {...provided.draggableProps}>
                     <Stack
-                        spacing={ 0 }>
-                        <Typography
-                            fontWeight="bold"
-                            variant="body2">
-                            Título: { title }
-                        </Typography>
-                        <Typography
-                            variant="caption">
-                            Data Criação: { created }
-                        </Typography>
-                    </Stack>
-                </CardContent>
-            }
-        </Card>
+                        component='img'
+                        borderRadius={theme.spacing(0.5)}
+                        src={anuncio.thumb}
+                        width={type == 'card' ? theme.spacing(16) : theme.spacing(10)} />
+                    {type == 'list' &&
+                        <Box
+                            display='flex'
+                            alignItems='center'>
+                            <Chip
+                                color='primary'
+                                label={anuncio.id}
+                                size='small'
+                                sx={{ marginX: theme.spacing(1) }} />
+                            <Box
+                                display='flex'
+                                flexDirection='column'
+                                flexWrap='wrap'>
+                                <Typography
+                                    variant='smallbody'>
+                                    {anuncio.title?.length > 40
+                                        ? anuncio.title.replace(/^(.{1,40})[\s\S]*/, '$1...')
+                                        : anuncio.title}
+                                </Typography>
+                                <Typography
+                                    variant='smallestbody'>
+                                    {anuncio.created}
+                                </Typography>
+                            </Box>
+                        </Box>}
+                </Box>
+            )}
+        </Draggable>
     );
-};
+}

@@ -1,4 +1,4 @@
-import { createContext, useCallback, useContext, useState } from "react";
+import { createContext, useCallback, useContext, useState } from 'react';
 
 const MenuContext = createContext({});
 
@@ -9,7 +9,7 @@ export const useMenuContext = () => {
 export const MenuProvider = ({ children }) => {
     const [ openMenu, setOpenMenu ] = useState(false);
     const [ optionsMenu, setOptionsMenu ] = useState([]);
-    const [ titleBar, setTitleBar ] = useState("");
+    const [ titleBar, setTitleBar ] = useState('');
 
     const handleOpenMenu = useCallback(() => {
         setOpenMenu((value) => !value);
@@ -25,15 +25,15 @@ export const MenuProvider = ({ children }) => {
 
     return (
         <MenuContext.Provider
-            value={ {
+            value={{
                 openMenu,
                 handleOpenMenu,
                 optionsMenu,
                 handleOptionsMenu,
                 titleBar,
                 handleTitleBar
-            } }>
-            { children }
+            }}>
+            {children}
         </MenuContext.Provider>
     );
 };

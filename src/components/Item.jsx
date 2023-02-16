@@ -1,5 +1,5 @@
-import { Icon, ListItemButton, ListItemIcon, ListItemText, useTheme } from "@mui/material";
-import { useMatch, useNavigate, useResolvedPath } from "react-router-dom";
+import { Icon, ListItemButton, ListItemIcon, ListItemText, useTheme } from '@mui/material';
+import { useMatch, useNavigate, useResolvedPath } from 'react-router-dom';
 
 export const Item = ({ icon, path, label, onClick }) => {
     const navigate = useNavigate();
@@ -18,18 +18,18 @@ export const Item = ({ icon, path, label, onClick }) => {
 
     return (
         <ListItemButton
-            dense={ true }
-            onClick={ handleClick }
-            selected={ !!match }>
+            dense={true}
+            onClick={handleClick}
+            selected={!!match}>
             <ListItemIcon
-                sx={ { minWidth: theme.spacing(5) } }>
-                <Icon >
-                    { icon }
+                sx={{ minWidth: theme.spacing(5) }}>
+                <Icon>
+                    {icon}
                 </Icon>
             </ListItemIcon>
             <ListItemText
-                sx={ { marginTop: theme.spacing(1) } }
-                primary={ label }
+                sx={{ marginTop: theme.spacing(1) }}
+                primary={label}
             />
         </ListItemButton>
     );

@@ -1,6 +1,6 @@
-import { Box, ThemeProvider } from "@mui/material";
-import { Dark, Light } from "themes";
-import { createContext, useCallback, useContext, useMemo, useState } from "react";
+import { Box, ThemeProvider } from '@mui/material';
+import { createContext, useCallback, useContext, useMemo, useState } from 'react';
+import { Dark, Light } from 'themes';
 
 const ThemeContext = createContext({});
 
@@ -9,14 +9,14 @@ export const useThemeContext = () => {
 };
 
 export const AppThemeProvider = ({ children }) => {
-    const [defaultTheme, setDefaultTheme] = useState("light");
+    const [defaultTheme, setDefaultTheme] = useState('light');
 
     const toggleTheme = useCallback(() => {
-        setDefaultTheme((old) => (old === "light" ? "dark" : "light"));
+        setDefaultTheme((old) => (old == 'light' ? 'dark' : 'light'));
     }, []);
 
     const theme = useMemo(() => {
-        if (defaultTheme === "light") {
+        if (defaultTheme == 'light') {
             return Light;
         } else {
             return Dark;
@@ -29,10 +29,11 @@ export const AppThemeProvider = ({ children }) => {
                 defaultTheme,
                 toggleTheme
             }}>
-            <ThemeProvider theme={theme}>
+            <ThemeProvider
+                theme={theme}>
                 <Box
-                    height="100vh"
-                    width="100vw"
+                    height='100vh'
+                    width='100vw'
                     bgcolor={theme.palette.background.default}>
                     {children}
                 </Box>
