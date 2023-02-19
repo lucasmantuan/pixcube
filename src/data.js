@@ -1,36 +1,90 @@
 export const anuncios = {
-    'ad1': {
-        id: 'ad1',
+    1: {
+        id: 1,
         title: 'Primeiro Anúncio',
         created: '20-02-2022',
         thumb: 'anuncios/001.jpg'
     },
-    'ad2': {
-        id: 'ad2',
+    2: {
+        id: 2,
         title: 'Segundo Anúncio',
         created: '20-02-2022',
         thumb: 'anuncios/002.jpg'
     },
-    'ad3': {
-        id: 'ad3',
+    3: {
+        id: 3,
         title: 'Terceiro Anúncio',
         created: '20-02-2022',
         thumb: 'anuncios/003.jpg'
     },
-    'ad4': {
-        id: 'ad4',
+    4: {
+        id: 4,
         title: 'Quarto Anúncio',
         created: '20-02-2022',
         thumb: 'anuncios/001.jpg'
     },
-    'ad5': {
-        id: 'ad5',
+    5: {
+        id: 5,
         title: 'Quinto Anúncio',
         created: '20-02-2022',
         thumb: 'anuncios/002.jpg'
     },
-    'ad6': {
-        id: 'ad6',
+    6: {
+        id: 6,
+        title: 'Sexto Anúncio',
+        created: '20-02-2022',
+        thumb: 'anuncios/003.jpg'
+    },
+    7: {
+        id: 7,
+        title: 'Terceiro Anúncio',
+        created: '20-02-2022',
+        thumb: 'anuncios/003.jpg'
+    },
+    8: {
+        id: 8,
+        title: 'Quarto Anúncio',
+        created: '20-02-2022',
+        thumb: 'anuncios/001.jpg'
+    },
+    9: {
+        id: 9,
+        title: 'Quinto Anúncio',
+        created: '20-02-2022',
+        thumb: 'anuncios/002.jpg'
+    },
+    10: {
+        id: 10,
+        title: 'Sexto Anúncio',
+        created: '20-02-2022',
+        thumb: 'anuncios/003.jpg'
+    },
+    11: {
+        id: 11,
+        title: 'Sexto Anúncio',
+        created: '20-02-2022',
+        thumb: 'anuncios/003.jpg'
+    },
+    12: {
+        id: 12,
+        title: 'Terceiro Anúncio',
+        created: '20-02-2022',
+        thumb: 'anuncios/003.jpg'
+    },
+    13: {
+        id: 13,
+        title: 'Quarto Anúncio',
+        created: '20-02-2022',
+        thumb: 'anuncios/001.jpg'
+    },
+    14: {
+        id: 14,
+        title: 'Quinto Anúncio',
+        created: '20-02-2022',
+        thumb: 'anuncios/002.jpg'
+    },
+    15: {
+        id: 15,
         title: 'Sexto Anúncio',
         created: '20-02-2022',
         thumb: 'anuncios/003.jpg'
@@ -38,36 +92,38 @@ export const anuncios = {
 };
 
 export const playlists = {
-    all: {
-        id: 'all',
+    0: {
+        id: 0,
         title: 'Todos os Anúncios',
-        color: '',
-        anuncios: ['ad1', 'ad2',],
+        color: '#FFFFFF',
+        ads: [1, 2, 7, 8, 9, 10, 11, 12]
     },
-    'pl1': {
-        id: 'pl1',
+    1: {
+        id: 1,
         title: 'Primeira Playlist',
-        color: 'primary',
-        anuncios: ['ad3', 'ad4', 'ad6'],
+        color: '#FF6961',
+        ads: [3, 4, 6]
     },
-    'pl2': {
-        id: 'pl2',
+    2: {
+        id: 2,
         title: 'Segunda Playlist',
-        color: 'secondary',
-        anuncios: [],
+        color: '#6D9384',
+        ads: [13, 14, 15]
     },
-    'pl3': {
-        id: 'pl3',
+    3: {
+        id: 3,
         title: 'Terceira Playlist',
-        color: 'error',
-        anuncios: ['ad5'],
+        color: '#889ECE',
+        ads: [5]
     },
-    'pl4': {
-        id: 'pl4',
-        title: 'Terceira Playlist',
-        color: 'warning',
-        anuncios: [],
+    4: {
+        id: 4,
+        title: 'Quarta Playlist',
+        color: '#FFB447',
+        ads: []
     }
 };
 
-export const order = ['all', 'pl1', 'pl2', 'pl3', 'pl4'];
+export const order = [0, 1, 2, 3, 4];
+
+export const colors = ['#FF6961', '#6D9384', '#889ECE', '#FFB447'];

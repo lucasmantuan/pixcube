@@ -7,9 +7,9 @@ export const useMenuContext = () => {
 };
 
 export const MenuProvider = ({ children }) => {
-    const [ openMenu, setOpenMenu ] = useState(false);
-    const [ optionsMenu, setOptionsMenu ] = useState([]);
-    const [ titleBar, setTitleBar ] = useState('');
+    const [openMenu, setOpenMenu] = useState(false);
+    const [optionsMenu, setOptionsMenu] = useState([]);
+    const [titleBar, setTitleBar] = useState('');
 
     const handleOpenMenu = useCallback(() => {
         setOpenMenu((value) => !value);

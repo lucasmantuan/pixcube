@@ -1,30 +1,30 @@
-import { createTheme } from "@mui/material";
-import { blue, grey } from "@mui/material/colors";
+import { createTheme } from '@mui/material';
+import { blue, grey } from '@mui/material/colors';
 
 export const Light = createTheme({
     palette: {
-        mode: "light",
+        mode: 'light',
         primary: {
-            main: blue[ 700 ]
+            main: blue[700]
         },
         background: {
-            default: grey[ 50 ]
+            default: grey[50]
         }
     },
     typography: {
-        smallbody:{
-            fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
+        smallbody: {
+            fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
             fontWeight: 400,
-            fontSize: "0.775rem",
+            fontSize: '0.775rem',
             lineHeight: 1.4,
-            letterSpacing: "0.030em"
+            letterSpacing: '0.030em'
         },
-        smallestbody:{
-            fontFamily: "'Roboto', 'Helvetica', 'Arial', sans-serif",
+        smallestbody: {
+            fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
             fontWeight: 400,
-            fontSize: "0.655rem",
+            fontSize: '0.655rem',
             lineHeight: 1.5,
-            letterSpacing: "0.025em"
+            letterSpacing: '0.025em'
         }
     }
 });

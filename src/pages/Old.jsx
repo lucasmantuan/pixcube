@@ -1,13 +1,13 @@
 const reducer = (state, action) => {
     switch (action.type) {
-    case 'MOVE': {
-        //
-    }
+        case 'MOVE': {
+            //
+        }
     }
 };
 
 export const PlayList = () => {
-    const [ state, dispatch ] = useReducer(reducer, { anuncios, playlists });
+    const [state, dispatch] = useReducer(reducer, { anuncios, playlists });
 
     const onDragEnd = useCallback((result) => {
         if (result.reason == 'DROP') {
@@ -20,7 +20,7 @@ export const PlayList = () => {
                 from_list: result.source.droppableId,
                 to_list: result.destination.droppableId,
                 from_index: result.source.index,
-                to_index: result.destination.index,
+                to_index: result.destination.index
             });
         }
     }, []);
@@ -40,29 +40,31 @@ export const PlayList = () => {
                         ref={provided.innerRef}
                         // sx={ snapshot.isDraggingOver ? { } : {  } }
                         {...provided.droppableProps}>
-                        {Object.values(state.anuncios)?.map((anuncio, index) => {
-                            return (
-                                <Draggable
-                                    key={anuncio.id}
-                                    draggableId={anuncio.id}
-                                    index={index}>
-                                    {(provided) => {
-                                        return (
-                                            <Box
-                                                ref={provided.innerRef}
-                                                // sx={ snapshot.isDragging ? { } : { } }
-                                                {...provided.dragHandleProps}
-                                                {...provided.draggableProps}>
-                                                <Anuncio
-                                                    image={anuncio.image}
-                                                    type='card'
-                                                />
-                                            </Box>
-                                        );
-                                    }}
-                                </Draggable>
-                            );
-                        })}
+                        {Object.values(state.anuncios)?.map(
+                            (anuncio, index) => {
+                                return (
+                                    <Draggable
+                                        key={anuncio.id}
+                                        draggableId={anuncio.id}
+                                        index={index}>
+                                        {(provided) => {
+                                            return (
+                                                <Box
+                                                    ref={provided.innerRef}
+                                                    // sx={ snapshot.isDragging ? { } : { } }
+                                                    {...provided.dragHandleProps}
+                                                    {...provided.draggableProps}>
+                                                    <Anuncio
+                                                        image={anuncio.image}
+                                                        type='card'
+                                                    />
+                                                </Box>
+                                            );
+                                        }}
+                                    </Draggable>
+                                );
+                            }
+                        )}
                         {provided.placeholder}
                     </Box>
                 );

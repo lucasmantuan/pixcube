@@ -8,19 +8,37 @@ export function useAdsContext() {
 }
 
 export function AdsProvider({ children }) {
-
     const [state, setState] = useState({
         anuncios: an,
         playlists: pl,
         order: or
     });
 
-    function onEditPlaylist(editPlaylist) {
-        const index = state.order.findIndex(
-            (playlist) => playlist == editPlaylist
-        );
+    function onCreatePlaylist(title, color, ads) {
+        const id = 5;
+
+        const playlist = { id, title, color, ads };
+
+        const newPlaylists = { ...state.playlists };
+        const newOrder = Array.from(state.order);
+
+        newPlaylists[id] = playlist;
+        newOrder.push(id);
+
+        const newState = {
+            ...state,
+            playlists: newPlaylists,
+            order: newOrder
+        };
+
+        setState(newState);
+    }
+
+    function onEditPlaylist(edit) {
+        const index = state.order.findIndex((playlist) => playlist == edit);
         const newOrder = Array.from(state.order);
         const [removed] = newOrder.splice(index, 1);
+
         newOrder.splice(1, 0, removed);
 
         const newState = {
@@ -34,11 +52,14 @@ export function AdsProvider({ children }) {
     function onDragEnd(result) {
         const { destination, source, draggableId } = result;
 
+        if (!destination) {
+            return;
+        }
 
-        if (!destination) { return; }
-
-        if (destination.droppableId == source.droppableId &&
-            destination.index == source.index) {
+        if (
+            destination.droppableId == source.droppableId &&
+            destination.index == source.index
+        ) {
             return;
         }
 
@@ -46,13 +67,13 @@ export function AdsProvider({ children }) {
         const finish = state.playlists[destination.droppableId];
 
         if (start == finish) {
-            const newAnuncios = Array.from(start.anuncios);
+            const newAnuncios = Array.from(start.ads);
             newAnuncios.splice(source.index, 1);
             newAnuncios.splice(destination.index, 0, draggableId);
 
             const newColumn = {
                 ...finish,
-                anuncios: newAnuncios
+                ads: newAnuncios
             };
 
             const newState = {
@@ -69,18 +90,18 @@ export function AdsProvider({ children }) {
         }
 
         // moving from one list to another
-        const startAnuncios = Array.from(start.anuncios);
+        const startAnuncios = Array.from(start.ads);
         startAnuncios.splice(source.index, 1);
         const newStart = {
             ...start,
-            anuncios: startAnuncios
+            ads: startAnuncios
         };
 
-        const finishAnuncios = Array.from(finish.anuncios);
+        const finishAnuncios = Array.from(finish.ads);
         finishAnuncios.splice(destination.index, 0, draggableId);
         const newFinish = {
             ...finish,
-            anuncios: finishAnuncios
+            ads: finishAnuncios
         };
 
         const newState = {
@@ -104,7 +125,8 @@ export function AdsProvider({ children }) {
                 order: state.order,
                 playlists: state.playlists,
                 onDragEnd,
-                onEditPlaylist
+                onEditPlaylist,
+                onCreatePlaylist
             }}>
             {children}
         </AdsContext.Provider>

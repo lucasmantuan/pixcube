@@ -1,29 +1,13 @@
 {
     "compilerOptions": {
-        "checkJs": false,
-        "resolveJsonModule": true,
-        "moduleResolution": "node",
-        "target": "es2018",
-        "module": "es2015",
         "baseUrl": "src",
-        "jsx": "preserve"
+        "jsx": "preserve",
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        "target": "ES2020"
     },
     "exclude": [
-        "dist",
         "node_modules",
-        "build",
-        ".vscode",
-        "coverage",
-        ".npm",
-        ".yarn"
-    ],
-    "typeAcquisition": {
-        "enable": true,
-        "include": [
-            "react",
-            "react-dom",
-            "jest",
-            "testing-library__jest-dom"
-        ]
-    }
+        "**/node_modules/*"
+    ]
 }

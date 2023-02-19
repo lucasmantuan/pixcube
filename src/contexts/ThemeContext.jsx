@@ -1,5 +1,11 @@
 import { Box, ThemeProvider } from '@mui/material';
-import { createContext, useCallback, useContext, useMemo, useState } from 'react';
+import {
+    createContext,
+    useCallback,
+    useContext,
+    useMemo,
+    useState
+} from 'react';
 import { Dark, Light } from 'themes';
 
 const ThemeContext = createContext({});
@@ -29,8 +35,7 @@ export const AppThemeProvider = ({ children }) => {
                 defaultTheme,
                 toggleTheme
             }}>
-            <ThemeProvider
-                theme={theme}>
+            <ThemeProvider theme={theme}>
                 <Box
                     height='100vh'
                     width='100vw'
