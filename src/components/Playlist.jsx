@@ -23,18 +23,19 @@ export function Playlist({ playlist, type, editable }) {
                     in={true}
                     timeout={300}>
                     <Box
-                        component={Paper}
-                        variant='outlined'
                         bgcolor={playlist.color}
                         borderRadius={theme.spacing(1)}
+                        component={Paper}
                         margin={theme.spacing(1)}
+                        maxHeight={`calc(100% - ${theme.spacing(5)})`}
                         minHeight={theme.spacing(6)}
+                        overflow='hidden'
                         padding={theme.spacing(1)}
                         ref={provided.innerRef}
+                        variant='outlined'
                         display='flex'
                         flexBasis='100%'
                         flexWrap='wrap'
-                        justifyContent='space-around'
                         {...provided.droppableProps}>
                         {editable && (
                             <Box
@@ -61,18 +62,26 @@ export function Playlist({ playlist, type, editable }) {
                                 </IconButton>
                             </Box>
                         )}
-                        {!editable &&
-                            playlist.ads
-                                .map((id) => anuncios[id])
-                                .map((anuncio, index) => (
-                                    <Anuncio
-                                        key={anuncio.id}
-                                        anuncio={anuncio}
-                                        index={index}
-                                        type={type}
-                                    />
-                                ))}
-                        {provided.placeholder}
+                        <Box
+                            maxHeight='100%'
+                            overflow='auto'
+                            display='flex'
+                            flexBasis='100%'
+                            flexWrap='wrap'
+                            justifyContent='space-around'>
+                            {!editable &&
+                                playlist.ads
+                                    .map((id) => anuncios[id])
+                                    .map((anuncio, index) => (
+                                        <Anuncio
+                                            key={anuncio.id}
+                                            anuncio={anuncio}
+                                            index={index}
+                                            type={type}
+                                        />
+                                    ))}
+                            {provided.placeholder}
+                        </Box>
                     </Box>
                 </Fade>
             )}

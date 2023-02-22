@@ -8,10 +8,8 @@ export const Base = ({ children }) => {
             display='flex'
             flexDirection='column'>
             <Box
-                flexShrink={1}
                 marginX={theme.spacing(2)}
-                marginTop={theme.spacing(9)}
-                overflow='hidden'>
+                marginTop={theme.spacing(9)}>
                 {children}
             </Box>
         </Box>

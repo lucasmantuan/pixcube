@@ -43,14 +43,14 @@ export function PlaylistCreator() {
                             closePopup();
                         }}
                         autoFocus>
-                        Cancelar
+                        Não
                     </Button>
                     <Button
                         onClick={() => {
                             onCreatePlaylist(...props);
                             closePopup();
                         }}>
-                        Criar
+                        Sim
                     </Button>
                 </>
             )
@@ -62,7 +62,6 @@ export function PlaylistCreator() {
             <DragDropContext onDragEnd={onDragEnd}>
                 <Grid
                     container
-                    height={mdDown ? null : `calc(100vh - ${theme.spacing(9)})`}
                     spacing={4}>
                     <Grid
                         item
@@ -70,9 +69,13 @@ export function PlaylistCreator() {
                         lg={4}>
                         <Box
                             component={Paper}
-                            variant='outlined'
-                            height='100%'
+                            height={
+                                mdDown
+                                    ? null
+                                    : `calc(100vh - ${theme.spacing(11)})`
+                            }
                             padding={theme.spacing(2)}
+                            variant='outlined'
                             display='flex'
                             alignContent='flex-start'
                             flexWrap='wrap'>
@@ -107,7 +110,11 @@ export function PlaylistCreator() {
                         <Box
                             component={Paper}
                             variant='outlined'
-                            height='100%'
+                            height={
+                                mdDown
+                                    ? null
+                                    : `calc(100vh - ${theme.spacing(11)})`
+                            }
                             padding={theme.spacing(2)}
                             display='flex'
                             alignContent='flex-start'
@@ -143,7 +150,11 @@ export function PlaylistCreator() {
                         <Box
                             component={Paper}
                             variant='outlined'
-                            height='100%'
+                            height={
+                                mdDown
+                                    ? null
+                                    : `calc(100vh - ${theme.spacing(11)})`
+                            }
                             padding={theme.spacing(2)}
                             display='flex'
                             alignContent='flex-start'

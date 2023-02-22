@@ -88,6 +88,42 @@ export const anuncios = {
         title: 'Sexto Anúncio',
         created: '20-02-2022',
         thumb: 'anuncios/003.jpg'
+    },
+    16: {
+        id: 16,
+        title: 'Sexto Anúncio',
+        created: '20-02-2022',
+        thumb: 'anuncios/003.jpg'
+    },
+    17: {
+        id: 17,
+        title: 'Sexto Anúncio',
+        created: '20-02-2022',
+        thumb: 'anuncios/003.jpg'
+    },
+    18: {
+        id: 18,
+        title: 'Terceiro Anúncio',
+        created: '20-02-2022',
+        thumb: 'anuncios/003.jpg'
+    },
+    19: {
+        id: 19,
+        title: 'Quarto Anúncio',
+        created: '20-02-2022',
+        thumb: 'anuncios/001.jpg'
+    },
+    20: {
+        id: 20,
+        title: 'Quinto Anúncio',
+        created: '20-02-2022',
+        thumb: 'anuncios/002.jpg'
+    },
+    21: {
+        id: 21,
+        title: 'Sexto Anúncio',
+        created: '20-02-2022',
+        thumb: 'anuncios/003.jpg'
     }
 };
 
@@ -96,7 +132,7 @@ export const playlists = {
         id: 0,
         title: 'Todos os Anúncios',
         color: '#FFFFFF',
-        ads: [1, 2, 7, 8, 9, 10, 11, 12]
+        ads: [1, 2, 7, 8, 9, 10, 11, 12, 16, 17, 18, 19, 20, 21]
     },
     1: {
         id: 1,
