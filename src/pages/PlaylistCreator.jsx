@@ -70,19 +70,20 @@ export function PlaylistCreator() {
                             variant='outlined'
                             display='flex'
                             alignContent='flex-start'
+                            alignItems='center'
                             flexWrap='wrap'>
                             <ChevronRightIcon fontSize='small' />
                             <Typography
                                 variant='subtitle2'
                                 align='left'
                                 flexGrow={1}>
-                                {!loading && playlists[order[0]].title}
+                                {!loading && playlists[order[0].playlists[0]].title}
                             </Typography>
-                            <IconButton sx={{ padding: 0 }}>
+                            <IconButton size='small'>
                                 <AddIcon />
                             </IconButton>
                             {!loading &&
-                                order
+                                order[0].playlists
                                     .filter((id, index) => index == 0)
                                     .map((id) => {
                                         const playlist = playlists[id];
@@ -113,13 +114,13 @@ export function PlaylistCreator() {
                                 variant='subtitle2'
                                 align='left'
                                 flexGrow={1}>
-                                {!loading && playlists[order[1]].title}
+                                {!loading && playlists[order[0].playlists[1]].title}
                             </Typography>
-                            <IconButton sx={{ padding: 0 }}>
+                            <IconButton size='small'>
                                 <RemoveIcon />
                             </IconButton>
                             {!loading &&
-                                order
+                                order[0].playlists
                                     .filter((id, index) => index == 1)
                                     .map((id) => {
                                         const playlist = playlists[id];
@@ -152,13 +153,11 @@ export function PlaylistCreator() {
                                 flexGrow={1}>
                                 Outras Playlists
                             </Typography>
-                            <IconButton
-                                onClick={() => {}}
-                                sx={{ padding: 0 }}>
+                            <IconButton size='small'>
                                 <AddIcon />
                             </IconButton>
                             {!loading &&
-                                order
+                                order[0].playlists
                                     .filter((id, index) => index > 1)
                                     .map((id) => {
                                         const playlist = playlists[id];

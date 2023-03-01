@@ -44,9 +44,8 @@ export function Playlist({ playlist, type, editable }) {
                                 </Box>
                                 <IconButton
                                     size='small'
-                                    color='inherit'
                                     onClick={() => onEditPlaylist(playlist.id)}>
-                                    <SettingsIcon fontSize='inherit' />
+                                    <SettingsIcon />
                                 </IconButton>
                             </Box>
                         )}

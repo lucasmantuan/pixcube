@@ -10,11 +10,9 @@ export function useAdsContext() {
 export function AdsProvider({ children }) {
     const [loading, setLoading] = useState(true);
     const [saving, setSaving] = useState(false);
-    const [playlists, setPlaylists] = useState([]);
-    const [anuncios, setAnuncios] = useState([]);
-    const [order, setOrder] = useState([0]);
-
-    const [state, setState] = useState({});
+    const [playlists, setPlaylists] = useState();
+    const [anuncios, setAnuncios] = useState();
+    const [order, setOrder] = useState();
 
     useEffect(() => {
         setLoading(true);
@@ -50,6 +48,7 @@ export function AdsProvider({ children }) {
             const startAnuncios = Array.from(start.ads);
             startAnuncios.splice(source.index, 1);
             startAnuncios.splice(destination.index, 0, Number(draggableId));
+
             const newStart = {
                 ...start,
                 ads: startAnuncios
@@ -72,6 +71,7 @@ export function AdsProvider({ children }) {
 
         const startAnuncios = Array.from(start.ads);
         startAnuncios.splice(source.index, 1);
+
         const newStart = {
             ...start,
             ads: startAnuncios
@@ -79,6 +79,7 @@ export function AdsProvider({ children }) {
 
         const finishAnuncios = Array.from(finish.ads);
         finishAnuncios.splice(destination.index, 0, Number(draggableId));
+
         const newFinish = {
             ...finish,
             ads: finishAnuncios
@@ -98,6 +99,29 @@ export function AdsProvider({ children }) {
             }
         });
         playlistService.updateById('playlists', destinationIndex, newFinish).then((result) => {
+            setSaving(false);
+            if (result instanceof Error) {
+                console.log(result.message);
+            }
+        });
+    }
+
+    function onEditPlaylist(editPlaylist) {
+        setSaving(true);
+        const startOrder = order[0];
+        const newOrderPlaylists = Array.from(startOrder.playlists);
+        const playlistIndex = startOrder.playlists.findIndex((playlist) => playlist == editPlaylist);
+        const [removedPlaylist] = newOrderPlaylists.splice(4, playlistIndex);
+        newOrderPlaylists.splice(1, 0, removedPlaylist);
+
+        const newStartOrder = {
+            ...startOrder,
+            playlists: newOrderPlaylists
+        };
+
+        setOrder([newStartOrder]);
+
+        playlistService.updateById('order', 0, newStartOrder).then((result) => {
             setSaving(false);
             if (result instanceof Error) {
                 console.log(result.message);
@@ -132,21 +156,6 @@ export function AdsProvider({ children }) {
     //         }
     //     });
     // }
-
-    function onEditPlaylist(edit) {
-        const index = order.findIndex((playlist) => playlist == edit);
-        const newOrder = Array.from(order);
-        const [removed] = newOrder.splice(index, 1);
-
-        newOrder.splice(1, 0, removed);
-
-        const newState = {
-            ...state,
-            order: newOrder
-        };
-
-        setState(newState);
-    }
 
     // function onCreatePlaylist() {
     // const newPlaylists = { ...playlists };
