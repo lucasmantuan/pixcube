@@ -1,11 +1,6 @@
 import { CssBaseline } from '@mui/material';
 import { Menu } from 'components';
-import {
-    AdsProvider,
-    AppThemeProvider,
-    MenuProvider,
-    PopupProvider
-} from 'contexts';
+import { AdsProvider, AppThemeProvider, MenuProvider, PopupProvider } from 'contexts';
 import { BrowserRouter } from 'react-router-dom';
 import { AppRoutes } from 'routes';
 

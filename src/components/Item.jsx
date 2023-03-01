@@ -1,10 +1,4 @@
-import {
-    Icon,
-    ListItemButton,
-    ListItemIcon,
-    ListItemText,
-    useTheme
-} from '@mui/material';
+import { Icon, ListItemButton, ListItemIcon, ListItemText, useTheme } from '@mui/material';
 import { useMatch, useNavigate, useResolvedPath } from 'react-router-dom';
 
 export const Item = ({ icon, path, label, onClick }) => {

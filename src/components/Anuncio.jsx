@@ -25,11 +25,7 @@ export function Anuncio({ anuncio, index, type }) {
                             component='img'
                             borderRadius={theme.spacing(0.5)}
                             src={anuncio.thumb}
-                            width={
-                                type == 'card'
-                                    ? theme.spacing(16)
-                                    : theme.spacing(10)
-                            }
+                            width={type == 'card' ? theme.spacing(16) : theme.spacing(10)}
                         />
                         {type == 'list' && (
                             <Box
@@ -46,16 +42,9 @@ export function Anuncio({ anuncio, index, type }) {
                                     flexDirection='column'
                                     flexWrap='wrap'>
                                     <Typography variant='smallbody'>
-                                        {anuncio.title?.length > 40
-                                            ? anuncio.title.replace(
-                                                  /^(.{1,40})[\s\S]*/,
-                                                  '$1...'
-                                              )
-                                            : anuncio.title}
+                                        {anuncio.title?.length > 40 ? anuncio.title.replace(/^(.{1,40})[\s\S]*/, '$1...') : anuncio.title}
                                     </Typography>
-                                    <Typography variant='smallestbody'>
-                                        {anuncio.created}
-                                    </Typography>
+                                    <Typography variant='smallestbody'>{anuncio.created}</Typography>
                                 </Box>
                             </Box>
                         )}

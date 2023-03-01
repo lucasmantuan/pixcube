@@ -3,30 +3,21 @@ import {
     HelpOutlineOutlined as HelpIcon,
     LightModeOutlined as LightIcon,
     LoginOutlined as LoginIcon,
-    MenuOutlined as MenuIcon
+    MenuOutlined as MenuIcon,
+    SaveOutlined as SaveIcon
 } from '@mui/icons-material';
-import {
-    AppBar,
-    Box,
-    Divider,
-    Drawer,
-    IconButton,
-    List,
-    Paper,
-    Toolbar,
-    Typography,
-    useMediaQuery,
-    useTheme
-} from '@mui/material';
+import { AppBar, Box, Divider, Drawer, Fade, IconButton, LinearProgress, List, Paper, Toolbar, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Stack } from '@mui/system';
 import { Item } from 'components';
-import { useMenuContext, useThemeContext } from 'contexts';
+import { useAdsContext, useMenuContext, useThemeContext } from 'contexts';
 import Logo from 'images/logo.svg';
+// import { useState } from 'react';
 
 export const Menu = ({ children }) => {
     const theme = useTheme();
     const mdDown = useMediaQuery(theme.breakpoints.down('md'));
-    const { openMenu, handleOpenMenu, optionsMenu, titleBar } =
-        useMenuContext();
+    const { openMenu, handleOpenMenu, optionsMenu, titleBar } = useMenuContext();
+    const { saving } = useAdsContext();
     const { toggleTheme } = useThemeContext();
 
     return (
@@ -40,7 +31,8 @@ export const Menu = ({ children }) => {
                 <Paper
                     elevation={0}
                     square={true}
-                    sx={{ height: 8 }}></Paper>
+                    sx={{ height: 8 }}
+                />
                 <Toolbar variant='dense'>
                     {mdDown && (
                         <IconButton
@@ -50,14 +42,29 @@ export const Menu = ({ children }) => {
                         </IconButton>
                     )}
                     <Typography
-                        variant='body1'
+                        variant='subtitle1'
                         flexGrow={1}>
                         {titleBar}
                     </Typography>
+                    {saving && (
+                        <Fade in={true}>
+                            <SaveIcon color='inherit' />
+                        </Fade>
+                    )}
                     <IconButton color='inherit'>
                         <HelpIcon />
                     </IconButton>
                 </Toolbar>
+                <Stack
+                    height={theme.spacing(0.5)}
+                    width='100%'>
+                    {saving && (
+                        <LinearProgress
+                            padding={0}
+                            variant='indeterminate'
+                        />
+                    )}
+                </Stack>
             </AppBar>
             <Drawer
                 onClose={handleOpenMenu}
@@ -98,11 +105,7 @@ export const Menu = ({ children }) => {
                     <IconButton
                         size='small'
                         onClick={toggleTheme}>
-                        {theme.palette.mode == 'light' ? (
-                            <DarkIcon />
-                        ) : (
-                            <LightIcon />
-                        )}
+                        {theme.palette.mode == 'light' ? <DarkIcon /> : <LightIcon />}
                     </IconButton>
                     <Divider />
                 </Box>

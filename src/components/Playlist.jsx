@@ -1,20 +1,12 @@
 import { SettingsOutlined as SettingsIcon } from '@mui/icons-material';
-import {
-    Box,
-    Fade,
-    IconButton,
-    Paper,
-    Typography,
-    useTheme
-} from '@mui/material';
+import { Box, Fade, IconButton, Paper, Typography, useTheme } from '@mui/material';
+import { Anuncio } from 'components';
 import { useAdsContext } from 'contexts';
 import { Droppable } from 'react-beautiful-dnd';
-import { Anuncio } from './Anuncio';
 
 export function Playlist({ playlist, type, editable }) {
     const theme = useTheme();
-
-    const { anuncios, onEditPlaylist } = useAdsContext();
+    const { anuncios, loading, onEditPlaylist } = useAdsContext();
 
     return (
         <Droppable droppableId={String(playlist.id)}>
@@ -47,12 +39,8 @@ export function Playlist({ playlist, type, editable }) {
                                     flexDirection='column'
                                     flexGrow={1}
                                     flexWrap='wrap'>
-                                    <Typography variant='smallestbody'>
-                                        Playlist: {playlist.title}
-                                    </Typography>
-                                    <Typography variant='smallestbody'>
-                                        Anúncios: {playlist.ads.length}
-                                    </Typography>
+                                    <Typography variant='smallestbody'>Playlist: {playlist.title}</Typography>
+                                    <Typography variant='smallestbody'>Anúncios: {playlist.ads.length}</Typography>
                                 </Box>
                                 <IconButton
                                     size='small'
@@ -69,7 +57,8 @@ export function Playlist({ playlist, type, editable }) {
                             flexBasis='100%'
                             flexWrap='wrap'
                             justifyContent='space-around'>
-                            {!editable &&
+                            {!loading &&
+                                !editable &&
                                 playlist.ads
                                     .map((id) => anuncios[id])
                                     .map((anuncio, index) => (

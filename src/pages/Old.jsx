@@ -40,31 +40,29 @@ export const PlayList = () => {
                         ref={provided.innerRef}
                         // sx={ snapshot.isDraggingOver ? { } : {  } }
                         {...provided.droppableProps}>
-                        {Object.values(state.anuncios)?.map(
-                            (anuncio, index) => {
-                                return (
-                                    <Draggable
-                                        key={anuncio.id}
-                                        draggableId={anuncio.id}
-                                        index={index}>
-                                        {(provided) => {
-                                            return (
-                                                <Box
-                                                    ref={provided.innerRef}
-                                                    // sx={ snapshot.isDragging ? { } : { } }
-                                                    {...provided.dragHandleProps}
-                                                    {...provided.draggableProps}>
-                                                    <Anuncio
-                                                        image={anuncio.image}
-                                                        type='card'
-                                                    />
-                                                </Box>
-                                            );
-                                        }}
-                                    </Draggable>
-                                );
-                            }
-                        )}
+                        {Object.values(state.anuncios)?.map((anuncio, index) => {
+                            return (
+                                <Draggable
+                                    key={anuncio.id}
+                                    draggableId={anuncio.id}
+                                    index={index}>
+                                    {(provided) => {
+                                        return (
+                                            <Box
+                                                ref={provided.innerRef}
+                                                // sx={ snapshot.isDragging ? { } : { } }
+                                                {...provided.dragHandleProps}
+                                                {...provided.draggableProps}>
+                                                <Anuncio
+                                                    image={anuncio.image}
+                                                    type='card'
+                                                />
+                                            </Box>
+                                        );
+                                    }}
+                                </Draggable>
+                            );
+                        })}
                         {provided.placeholder}
                     </Box>
                 );

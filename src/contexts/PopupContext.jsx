@@ -1,10 +1,4 @@
-import {
-    Dialog,
-    DialogActions,
-    DialogContent,
-    DialogContentText,
-    DialogTitle
-} from '@mui/material';
+import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@mui/material';
 import { createContext, useCallback, useContext, useState } from 'react';
 
 const PopupContext = createContext([]);
@@ -29,20 +23,15 @@ export const PopupProvider = ({ children }) => {
         setPopup({});
     }, []);
 
-    const PopupContainer = ({
-        title,
-        content,
-        actions,
-        open = false,
-        onClose
-    }) => {
+    const PopupContainer = ({ title, contentText, contentForm, actions, open = false, onClose }) => {
         return (
             <Dialog
                 open={open}
                 onClose={onClose}>
                 <DialogTitle>{title}</DialogTitle>
                 <DialogContent>
-                    <DialogContentText>{content}</DialogContentText>
+                    <DialogContentText>{contentText}</DialogContentText>
+                    {contentForm}
                 </DialogContent>
                 <DialogActions>{actions}</DialogActions>
             </Dialog>
