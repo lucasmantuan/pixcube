@@ -111,7 +111,7 @@ export function AdsProvider({ children }) {
         const startOrder = order[0];
         const newOrderPlaylists = Array.from(startOrder.playlists);
         const playlistIndex = startOrder.playlists.findIndex((playlist) => playlist == editPlaylist);
-        const [removedPlaylist] = newOrderPlaylists.splice(4, playlistIndex);
+        const [removedPlaylist] = newOrderPlaylists.splice(playlistIndex, 1);
         newOrderPlaylists.splice(1, 0, removedPlaylist);
 
         const newStartOrder = {
