@@ -1,24 +1,15 @@
-import {
-    DarkModeOutlined as DarkIcon,
-    HelpOutlineOutlined as HelpIcon,
-    LightModeOutlined as LightIcon,
-    LoginOutlined as LoginIcon,
-    MenuOutlined as MenuIcon,
-    SaveOutlined as SaveIcon
-} from '@mui/icons-material';
+import { HelpOutlined as HelpIcon, MenuOutlined as MenuIcon, SaveOutlined as SaveIcon } from '@mui/icons-material';
 import { AppBar, Box, Divider, Drawer, Fade, IconButton, LinearProgress, List, Paper, Toolbar, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { Stack } from '@mui/system';
-import { Item } from 'components';
-import { useAdsContext, useMenuContext, useThemeContext } from 'contexts';
+import { Item, ThemeSelector, User } from 'components';
+import { useAdsContext, useMenuContext } from 'contexts';
 import Logo from 'images/logo.svg';
-// import { useState } from 'react';
 
 export const Menu = ({ children }) => {
     const theme = useTheme();
-    const mdDown = useMediaQuery(theme.breakpoints.down('md'));
+    const lgDown = useMediaQuery(theme.breakpoints.down('lg'));
     const { openMenu, handleOpenMenu, optionsMenu, titleBar } = useMenuContext();
-    const { saving } = useAdsContext();
-    const { toggleTheme } = useThemeContext();
+    const { loading, saving } = useAdsContext();
 
     return (
         <>
@@ -26,7 +17,7 @@ export const Menu = ({ children }) => {
                 elevation={0}
                 position='fixed'
                 sx={{
-                    width: mdDown ? '100%' : `calc(100% - ${theme.spacing(26)})`
+                    width: lgDown ? '100%' : `calc(100% - ${theme.spacing(26)})`
                 }}>
                 <Paper
                     elevation={0}
@@ -34,7 +25,7 @@ export const Menu = ({ children }) => {
                     sx={{ height: 8 }}
                 />
                 <Toolbar variant='dense'>
-                    {mdDown && (
+                    {lgDown && (
                         <IconButton
                             color='inherit'
                             onClick={handleOpenMenu}>
@@ -58,7 +49,7 @@ export const Menu = ({ children }) => {
                 <Stack
                     height={theme.spacing(0.5)}
                     width='100%'>
-                    {saving && (
+                    {(loading || saving) && (
                         <LinearProgress
                             padding={0}
                             variant='indeterminate'
@@ -69,16 +60,18 @@ export const Menu = ({ children }) => {
             <Drawer
                 onClose={handleOpenMenu}
                 open={openMenu}
-                variant={mdDown ? 'temporary' : 'permanent'}>
+                variant={lgDown ? 'temporary' : 'permanent'}>
                 <Box
                     height='100%'
-                    width={theme.spacing(26)}>
+                    width={theme.spacing(26)}
+                    display='flex'
+                    flexDirection='column'>
                     <Box
+                        paddingTop={1}
+                        paddingBottom={2}
                         display='flex'
                         alignContent='center'
-                        justifyContent='center'
-                        paddingTop={1}
-                        paddingBottom={2}>
+                        justifyContent='center'>
                         <Box
                             component='img'
                             src={Logo}
@@ -86,31 +79,27 @@ export const Menu = ({ children }) => {
                         />
                     </Box>
                     <Divider />
-                    <IconButton size='small'>
-                        <LoginIcon />
-                    </IconButton>
+                    <User />
                     <Divider />
-                    <List component='nav'>
-                        {optionsMenu.map((option) => (
-                            <Item
-                                icon={option.icon}
-                                key={option.id}
-                                label={option.label}
-                                onClick={mdDown ? handleOpenMenu : null}
-                                path={option.path}
-                            />
-                        ))}
-                    </List>
+                    <Box flexGrow={1}>
+                        <List component='nav'>
+                            {optionsMenu.map((option) => (
+                                <Item
+                                    icon={option.icon}
+                                    key={option.id}
+                                    label={option.label}
+                                    onClick={lgDown ? handleOpenMenu : null}
+                                    path={option.path}
+                                />
+                            ))}
+                        </List>
+                    </Box>
                     <Divider />
-                    <IconButton
-                        size='small'
-                        onClick={toggleTheme}>
-                        {theme.palette.mode == 'light' ? <DarkIcon /> : <LightIcon />}
-                    </IconButton>
+                    <ThemeSelector />
                     <Divider />
                 </Box>
             </Drawer>
-            <Box marginLeft={mdDown ? 0 : theme.spacing(26)}>{children}</Box>
+            <Box marginLeft={lgDown ? 0 : theme.spacing(26)}>{children}</Box>
         </>
     );
 };

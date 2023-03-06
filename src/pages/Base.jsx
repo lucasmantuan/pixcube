@@ -9,7 +9,7 @@ export const Base = ({ children }) => {
             flexDirection='column'>
             <Box
                 marginX={theme.spacing(2)}
-                marginTop={theme.spacing(9)}>
+                marginTop={theme.spacing(9.5)}>
                 {children}
             </Box>
         </Box>

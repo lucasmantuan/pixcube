@@ -1,9 +1,4 @@
-import {
-    HomeOutlined as HomeIcon,
-    SettingsOutlined as SettingsIcon,
-    SmartDisplayOutlined as SmartDisplayIcon,
-    SubscriptionsOutlined as SubscriptionsIcon
-} from '@mui/icons-material';
+import { Home as HomeIcon, Settings as SettingsIcon, SmartDisplay as CreatorIcon, ViewList as ListIcon } from '@mui/icons-material';
 import { useMenuContext } from 'contexts';
 import { PlaylistCreator } from 'pages';
 import { useEffect } from 'react';
@@ -22,13 +17,13 @@ export const AppRoutes = () => {
             },
             {
                 id: 2,
-                icon: <SmartDisplayIcon />,
+                icon: <CreatorIcon />,
                 label: 'Criador',
                 path: '/criador'
             },
             {
                 id: 3,
-                icon: <SubscriptionsIcon />,
+                icon: <ListIcon />,
                 label: 'Grade',
                 path: '/grade'
             },

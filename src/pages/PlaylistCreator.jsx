@@ -58,15 +58,18 @@ export function PlaylistCreator() {
             <DragDropContext onDragEnd={onDragEnd}>
                 <Grid
                     container
-                    spacing={4}>
+                    spacing={2}>
                     <Grid
                         item
-                        xs={12}
-                        lg={4}>
+                        xl={4}
+                        lg={4}
+                        md={4}
+                        sm={12}
+                        xs={12}>
                         <Box
                             component={Paper}
                             height={mdDown ? null : `calc(100vh - ${theme.spacing(11)})`}
-                            padding={theme.spacing(2)}
+                            padding={theme.spacing(1)}
                             variant='outlined'
                             display='flex'
                             alignContent='flex-start'
@@ -99,15 +102,19 @@ export function PlaylistCreator() {
                     </Grid>
                     <Grid
                         item
-                        xs={12}
-                        lg={4}>
+                        xl={4}
+                        lg={4}
+                        md={4}
+                        sm={12}
+                        xs={12}>
                         <Box
                             component={Paper}
                             variant='outlined'
                             height={mdDown ? null : `calc(100vh - ${theme.spacing(11)})`}
-                            padding={theme.spacing(2)}
+                            padding={theme.spacing(1)}
                             display='flex'
                             alignContent='flex-start'
+                            alignItems='center'
                             flexWrap='wrap'>
                             <ChevronRightIcon fontSize='small' />
                             <Typography
@@ -136,15 +143,19 @@ export function PlaylistCreator() {
                     </Grid>
                     <Grid
                         item
-                        xs={12}
-                        lg={4}>
+                        xl={4}
+                        lg={4}
+                        md={4}
+                        sm={12}
+                        xs={12}>
                         <Box
                             component={Paper}
                             variant='outlined'
                             height={mdDown ? null : `calc(100vh - ${theme.spacing(11)})`}
-                            padding={theme.spacing(2)}
+                            padding={theme.spacing(1)}
                             display='flex'
                             alignContent='flex-start'
+                            alignItems='center'
                             flexWrap='wrap'>
                             <ChevronRightIcon fontSize='small' />
                             <Typography

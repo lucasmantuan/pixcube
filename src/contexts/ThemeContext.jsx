@@ -31,8 +31,8 @@ export const AppThemeProvider = ({ children }) => {
             }}>
             <ThemeProvider theme={theme}>
                 <Box
-                    height='100vh'
-                    width='100vw'>
+                    height='100%'
+                    width='100%'>
                     {children}
                 </Box>
             </ThemeProvider>

@@ -25,7 +25,7 @@ export function Anuncio({ anuncio, index, type }) {
                             component='img'
                             borderRadius={theme.spacing(0.5)}
                             src={anuncio.thumb}
-                            width={type == 'card' ? theme.spacing(16) : theme.spacing(10)}
+                            width={type == 'card' ? theme.spacing(14) : theme.spacing(10)}
                         />
                         {type == 'list' && (
                             <Box
