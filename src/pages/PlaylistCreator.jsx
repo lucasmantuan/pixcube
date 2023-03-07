@@ -1,4 +1,4 @@
-import { AddCircleOutline as AddIcon, ChevronRight as ChevronRightIcon, RemoveCircleOutline as RemoveIcon } from '@mui/icons-material';
+import { AddCircleOutline as AddIcon, ChevronRight as RightIcon, DeleteOutline as DeleteIcon } from '@mui/icons-material';
 import { Box, Grid, IconButton, Paper, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { Playlist } from 'components';
 import { useAdsContext, useMenuContext } from 'contexts';
@@ -75,14 +75,14 @@ export function PlaylistCreator() {
                             alignContent='flex-start'
                             alignItems='center'
                             flexWrap='wrap'>
-                            <ChevronRightIcon fontSize='small' />
+                            <RightIcon fontSize='small' />
                             <Typography
                                 variant='subtitle2'
                                 align='left'
                                 flexGrow={1}>
                                 {!loading && playlists[order[0].playlists[0]].title}
                             </Typography>
-                            <IconButton size='small'>
+                            <IconButton>
                                 <AddIcon />
                             </IconButton>
                             {!loading &&
@@ -116,15 +116,15 @@ export function PlaylistCreator() {
                             alignContent='flex-start'
                             alignItems='center'
                             flexWrap='wrap'>
-                            <ChevronRightIcon fontSize='small' />
+                            <RightIcon fontSize='small' />
                             <Typography
                                 variant='subtitle2'
                                 align='left'
                                 flexGrow={1}>
                                 {!loading && playlists[order[0].playlists[1]].title}
                             </Typography>
-                            <IconButton size='small'>
-                                <RemoveIcon />
+                            <IconButton>
+                                <DeleteIcon />
                             </IconButton>
                             {!loading &&
                                 order[0].playlists
@@ -157,14 +157,14 @@ export function PlaylistCreator() {
                             alignContent='flex-start'
                             alignItems='center'
                             flexWrap='wrap'>
-                            <ChevronRightIcon fontSize='small' />
+                            <RightIcon fontSize='small' />
                             <Typography
                                 variant='subtitle2'
                                 align='left'
                                 flexGrow={1}>
                                 Outras Playlists
                             </Typography>
-                            <IconButton size='small'>
+                            <IconButton>
                                 <AddIcon />
                             </IconButton>
                             {!loading &&

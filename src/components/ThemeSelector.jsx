@@ -7,7 +7,7 @@ export const ThemeSelector = () => {
     const { toggleTheme } = useThemeContext();
 
     return (
-        <List>
+        <List component='nav'>
             <ListItem sx={{ padding: 0 }}>
                 <ListItemButton
                     dense={true}

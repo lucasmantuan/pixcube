@@ -1,4 +1,4 @@
-import { SettingsOutlined as SettingsIcon } from '@mui/icons-material';
+import { Settings as SettingsIcon, Delete as DeleteIcon } from '@mui/icons-material';
 import { Box, Fade, IconButton, Paper, Typography, useTheme } from '@mui/material';
 import { Anuncio } from 'components';
 import { useAdsContext } from 'contexts';
@@ -16,18 +16,28 @@ export function Playlist({ playlist, type, editable }) {
                     timeout={300}>
                     <Box
                         bgcolor={playlist.color}
-                        borderRadius={theme.spacing(1)}
+                        borderRadius={0}
                         component={Paper}
                         margin={theme.spacing(1)}
-                        maxHeight={`calc(100% - ${theme.spacing(5)})`}
+                        maxHeight={`calc(100% - ${theme.spacing(7)})`}
                         minHeight={theme.spacing(6)}
-                        overflow='hidden'
+                        overflow='auto'
                         padding={theme.spacing(1)}
                         ref={provided.innerRef}
                         variant='outlined'
                         display='flex'
                         flexBasis='100%'
                         flexWrap='wrap'
+                        sx={{
+                            scrollbarColor: 'rgba(211, 210, 209, 0.5) rgba(93, 92, 91, 0.5)',
+                            '&::-webkit-scrollbar': {
+                                backgroundColor: 'rgba(211, 210, 209, 0.5)',
+                                width: 4
+                            },
+                            '&::-webkit-scrollbar-thumb': {
+                                backgroundColor: 'rgba(93, 92, 91, 0.5)'
+                            }
+                        }}
                         {...provided.droppableProps}>
                         {editable && (
                             <Box
@@ -42,10 +52,11 @@ export function Playlist({ playlist, type, editable }) {
                                     <Typography variant='smallestbody'>Playlist: {playlist.title}</Typography>
                                     <Typography variant='smallestbody'>Anúncios: {playlist.ads.length}</Typography>
                                 </Box>
-                                <IconButton
-                                    size='small'
-                                    onClick={() => onEditPlaylist(playlist.id)}>
-                                    <SettingsIcon />
+                                <IconButton onClick={() => onEditPlaylist(playlist.id)}>
+                                    <SettingsIcon fontSize='small' />
+                                </IconButton>
+                                <IconButton onClick={() => onEditPlaylist(playlist.id)}>
+                                    <DeleteIcon fontSize='small' />
                                 </IconButton>
                             </Box>
                         )}

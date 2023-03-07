@@ -1,4 +1,4 @@
-import { HelpOutlined as HelpIcon, MenuOutlined as MenuIcon, SaveOutlined as SaveIcon } from '@mui/icons-material';
+import { HelpOutlineOutlined as HelpIcon, MenuOutlined as MenuIcon, SaveOutlined as SaveIcon } from '@mui/icons-material';
 import { AppBar, Box, Divider, Drawer, Fade, IconButton, LinearProgress, List, Paper, Toolbar, Typography, useMediaQuery, useTheme } from '@mui/material';
 import { Stack } from '@mui/system';
 import { Item, ThemeSelector, User } from 'components';

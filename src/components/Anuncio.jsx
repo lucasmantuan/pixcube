@@ -35,7 +35,10 @@ export function Anuncio({ anuncio, index, type }) {
                                     color='primary'
                                     label={anuncio.id}
                                     size='small'
-                                    sx={{ marginX: theme.spacing(1) }}
+                                    sx={{
+                                        fontSize: theme.spacing(1.3),
+                                        marginX: theme.spacing(1)
+                                    }}
                                 />
                                 <Box
                                     display='flex'
