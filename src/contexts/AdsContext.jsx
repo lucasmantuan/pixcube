@@ -127,6 +127,19 @@ export function AdsProvider({ children }) {
                 console.log(result.message);
             }
         });
+
+        // function onEditPlaylist(playlistToMove) {
+        //     const startOrder = order[0];
+        //     const updatedPlaylists = [...startOrder.playlists];
+        //     const playlistIndex = startOrder.playlists.findIndex((playlist) => playlist == playlistToMove);
+        //     updatedPlaylists.move(playlistIndex, 1);
+
+        //     const newStartOrder = {
+        //         ...startOrder,
+        //         playlists: updatedPlaylists
+        //     };
+
+        //     setOrder([newStartOrder]);
     }
 
     // function onCreatePlaylist() {

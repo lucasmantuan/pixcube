@@ -1,4 +1,4 @@
-const colors = ['#FF6961', '#6D9384', '#889ECE', '#FFB447'];
+const colors = ['#primary', 'secondary', 'error', 'warning', 'info', 'success'];
 
 export function colorGenerator() {
     let index = Math.floor(Math.random() * colors.length);

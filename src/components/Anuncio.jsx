@@ -13,7 +13,7 @@ export function Anuncio({ anuncio, index, type }) {
                     in={true}
                     timeout={600}>
                     <Box
-                        bgcolor='white'
+                        bgcolor='#FFFFFF'
                         borderRadius={theme.spacing(0.5)}
                         margin={theme.spacing(0.5)}
                         ref={provided.innerRef}

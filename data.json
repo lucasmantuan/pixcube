@@ -1,202 +1,174 @@
 {
-  "playlists": [
-    {
-      "id": 0,
-      "title": "Todos os Anúncios",
-      "color": "#FFFFFF",
-      "ads": [
-        16,
-        12,
-        1,
-        9,
-        18,
-        20,
-        5,
-        13,
-        19,
-        8,
-        0,
-        10,
-        14,
-        21,
-        3,
-        15,
-        4,
-        11,
-        17,
-        6,
-        7
-      ]
-    },
-    {
-      "id": 1,
-      "title": "Primeira Playlist",
-      "color": "#FF6961",
-      "ads": []
-    },
-    {
-      "id": 2,
-      "title": "Segunda Playlist",
-      "color": "#6D9384",
-      "ads": []
-    },
-    {
-      "id": 3,
-      "title": "Terceira Playlist",
-      "color": "#889ECE",
-      "ads": []
-    },
-    {
-      "id": 4,
-      "title": "Quarta Playlist",
-      "color": "#FFB447",
-      "ads": []
-    }
-  ],
-  "anuncios": [
-    {
-      "id": 0,
-      "title": "Primeiro Anúncio",
-      "created": "20-02-2022",
-      "thumb": "anuncios/001.jpg"
-    },
-    {
-      "id": 1,
-      "title": "Primeiro Anúncio",
-      "created": "20-02-2022",
-      "thumb": "anuncios/001.jpg"
-    },
-    {
-      "id": 2,
-      "title": "Segundo Anúncio",
-      "created": "20-02-2022",
-      "thumb": "anuncios/002.jpg"
-    },
-    {
-      "id": 3,
-      "title": "Terceiro Anúncio",
-      "created": "20-02-2022",
-      "thumb": "anuncios/003.jpg"
-    },
-    {
-      "id": 4,
-      "title": "Quarto Anúncio",
-      "created": "20-02-2022",
-      "thumb": "anuncios/001.jpg"
-    },
-    {
-      "id": 5,
-      "title": "Quinto Anúncio",
-      "created": "20-02-2022",
-      "thumb": "anuncios/002.jpg"
-    },
-    {
-      "id": 6,
-      "title": "Sexto Anúncio",
-      "created": "20-02-2022",
-      "thumb": "anuncios/003.jpg"
-    },
-    {
-      "id": 7,
-      "title": "Terceiro Anúncio",
-      "created": "20-02-2022",
-      "thumb": "anuncios/003.jpg"
-    },
-    {
-      "id": 8,
-      "title": "Quarto Anúncio",
-      "created": "20-02-2022",
-      "thumb": "anuncios/001.jpg"
-    },
-    {
-      "id": 9,
-      "title": "Quinto Anúncio",
-      "created": "20-02-2022",
-      "thumb": "anuncios/002.jpg"
-    },
-    {
-      "id": 10,
-      "title": "Sexto Anúncio",
-      "created": "20-02-2022",
-      "thumb": "anuncios/003.jpg"
-    },
-    {
-      "id": 11,
-      "title": "Sexto Anúncio",
-      "created": "20-02-2022",
-      "thumb": "anuncios/003.jpg"
-    },
-    {
-      "id": 12,
-      "title": "Terceiro Anúncio",
-      "created": "20-02-2022",
-      "thumb": "anuncios/003.jpg"
-    },
-    {
-      "id": 13,
-      "title": "Quarto Anúncio",
-      "created": "20-02-2022",
-      "thumb": "anuncios/001.jpg"
-    },
-    {
-      "id": 14,
-      "title": "Quinto Anúncio",
-      "created": "20-02-2022",
-      "thumb": "anuncios/002.jpg"
-    },
-    {
-      "id": 15,
-      "title": "Sexto Anúncio",
-      "created": "20-02-2022",
-      "thumb": "anuncios/003.jpg"
-    },
-    {
-      "id": 16,
-      "title": "Sexto Anúncio",
-      "created": "20-02-2022",
-      "thumb": "anuncios/003.jpg"
-    },
-    {
-      "id": 17,
-      "title": "Sexto Anúncio",
-      "created": "20-02-2022",
-      "thumb": "anuncios/003.jpg"
-    },
-    {
-      "id": 18,
-      "title": "Terceiro Anúncio",
-      "created": "20-02-2022",
-      "thumb": "anuncios/003.jpg"
-    },
-    {
-      "id": 19,
-      "title": "Quarto Anúncio",
-      "created": "20-02-2022",
-      "thumb": "anuncios/001.jpg"
-    },
-    {
-      "id": 20,
-      "title": "Quinto Anúncio",
-      "created": "20-02-2022",
-      "thumb": "anuncios/002.jpg"
-    },
-    {
-      "id": 21,
-      "title": "Sexto Anúncio",
-      "created": "20-02-2022",
-      "thumb": "anuncios/003.jpg"
-    }
-  ],
-  "order": [
-    {
-      "id": 0,
-      "playlists": [
-        0,
-        1,
-        4,
-        3,
-        2
-      ]
-    }
-  ]
+    "playlists": [
+        {
+            "id": 0,
+            "title": "Todos os Anúncios",
+            "color": "",
+            "ads": [16, 12, 9, 18, 20, 5, 14, 13, 0, 10, 21, 4, 8, 19, 11]
+        },
+        {
+            "id": 1,
+            "title": "Primeira Playlist",
+            "color": "primary",
+            "ads": [17, 7, 3, 6, 1, 15]
+        },
+        {
+            "id": 2,
+            "title": "Segunda Playlist",
+            "color": "secondary",
+            "ads": []
+        },
+        {
+            "id": 3,
+            "title": "Terceira Playlist",
+            "color": "error",
+            "ads": []
+        },
+        {
+            "id": 4,
+            "title": "Quarta Playlist",
+            "color": "warning",
+            "ads": []
+        }
+    ],
+    "anuncios": [
+        {
+            "id": 0,
+            "title": "Primeiro Anúncio",
+            "created": "20-02-2022",
+            "thumb": "anuncios/001.jpg"
+        },
+        {
+            "id": 1,
+            "title": "Primeiro Anúncio",
+            "created": "20-02-2022",
+            "thumb": "anuncios/001.jpg"
+        },
+        {
+            "id": 2,
+            "title": "Segundo Anúncio",
+            "created": "20-02-2022",
+            "thumb": "anuncios/002.jpg"
+        },
+        {
+            "id": 3,
+            "title": "Terceiro Anúncio",
+            "created": "20-02-2022",
+            "thumb": "anuncios/003.jpg"
+        },
+        {
+            "id": 4,
+            "title": "Quarto Anúncio",
+            "created": "20-02-2022",
+            "thumb": "anuncios/001.jpg"
+        },
+        {
+            "id": 5,
+            "title": "Quinto Anúncio",
+            "created": "20-02-2022",
+            "thumb": "anuncios/002.jpg"
+        },
+        {
+            "id": 6,
+            "title": "Sexto Anúncio",
+            "created": "20-02-2022",
+            "thumb": "anuncios/003.jpg"
+        },
+        {
+            "id": 7,
+            "title": "Terceiro Anúncio",
+            "created": "20-02-2022",
+            "thumb": "anuncios/003.jpg"
+        },
+        {
+            "id": 8,
+            "title": "Quarto Anúncio",
+            "created": "20-02-2022",
+            "thumb": "anuncios/001.jpg"
+        },
+        {
+            "id": 9,
+            "title": "Quinto Anúncio",
+            "created": "20-02-2022",
+            "thumb": "anuncios/002.jpg"
+        },
+        {
+            "id": 10,
+            "title": "Sexto Anúncio",
+            "created": "20-02-2022",
+            "thumb": "anuncios/003.jpg"
+        },
+        {
+            "id": 11,
+            "title": "Sexto Anúncio",
+            "created": "20-02-2022",
+            "thumb": "anuncios/003.jpg"
+        },
+        {
+            "id": 12,
+            "title": "Terceiro Anúncio",
+            "created": "20-02-2022",
+            "thumb": "anuncios/003.jpg"
+        },
+        {
+            "id": 13,
+            "title": "Quarto Anúncio",
+            "created": "20-02-2022",
+            "thumb": "anuncios/001.jpg"
+        },
+        {
+            "id": 14,
+            "title": "Quinto Anúncio",
+            "created": "20-02-2022",
+            "thumb": "anuncios/002.jpg"
+        },
+        {
+            "id": 15,
+            "title": "Sexto Anúncio",
+            "created": "20-02-2022",
+            "thumb": "anuncios/003.jpg"
+        },
+        {
+            "id": 16,
+            "title": "Sexto Anúncio",
+            "created": "20-02-2022",
+            "thumb": "anuncios/003.jpg"
+        },
+        {
+            "id": 17,
+            "title": "Sexto Anúncio",
+            "created": "20-02-2022",
+            "thumb": "anuncios/003.jpg"
+        },
+        {
+            "id": 18,
+            "title": "Terceiro Anúncio",
+            "created": "20-02-2022",
+            "thumb": "anuncios/003.jpg"
+        },
+        {
+            "id": 19,
+            "title": "Quarto Anúncio",
+            "created": "20-02-2022",
+            "thumb": "anuncios/001.jpg"
+        },
+        {
+            "id": 20,
+            "title": "Quinto Anúncio",
+            "created": "20-02-2022",
+            "thumb": "anuncios/002.jpg"
+        },
+        {
+            "id": 21,
+            "title": "Sexto Anúncio",
+            "created": "20-02-2022",
+            "thumb": "anuncios/003.jpg"
+        }
+    ],
+    "order": [
+        {
+            "id": 0,
+            "playlists": [0, 1, 4, 3, 2]
+        }
+    ]
 }

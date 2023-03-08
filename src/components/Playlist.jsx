@@ -8,6 +8,26 @@ export function Playlist({ playlist, type, editable }) {
     const theme = useTheme();
     const { anuncios, loading, onEditPlaylist } = useAdsContext();
 
+    function corSelector(id) {
+        let color;
+        let mode = theme.palette.mode;
+
+        if (mode == 'light') {
+            if (id == 0) {
+                color = theme.palette.common.white;
+            } else {
+                color = theme.palette[playlist.color].light;
+            }
+        } else {
+            if (id == 0) {
+                color = theme.palette.common.white;
+            } else {
+                color = theme.palette[playlist.color].dark;
+            }
+        }
+        return color;
+    }
+
     return (
         <Droppable droppableId={String(playlist.id)}>
             {(provided) => (
@@ -15,7 +35,7 @@ export function Playlist({ playlist, type, editable }) {
                     in={true}
                     timeout={300}>
                     <Box
-                        bgcolor={playlist.color}
+                        bgcolor={corSelector(playlist.id)}
                         borderRadius={0}
                         component={Paper}
                         margin={theme.spacing(1)}
